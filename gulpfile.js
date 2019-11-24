@@ -1,21 +1,16 @@
 const gulp = require('gulp'),
-    terser = require('gulp-terser'),
-    rename = require('gulp-rename'),
-    eslint = require('gulp-eslint'),
     sass = require('gulp-sass'),
     cssnano = require('gulp-cssnano'),
     autoprefixer = require('gulp-autoprefixer'),
+    terser = require('gulp-terser'),
+    rename = require('gulp-rename'),
+    eslint = require('gulp-eslint'),
     browserSync = require('browser-sync').create();
 
-gulp.task("sass", function () {
-    return gulp
-        .src("./stylesheets/styles.scss")
+gulp.task('sass', function () {
+    return gulp.src("./stylesheets/styles.scss")
         .pipe(sass())
-        .pipe(
-            autoprefixer({
-                browsers: ["last 2 versions"]
-            })
-        )
+        .pipe(autoprefixer())
         .pipe(gulp.dest("./build/css"))
         .pipe(cssnano())
         .pipe(rename({ extname: '.min.css' }))
@@ -23,7 +18,7 @@ gulp.task("sass", function () {
 });
 
 gulp.task('scripts', function () {
-    gulp.src('./js/*.js')
+    return gulp.src('./js/*.js')
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError())
@@ -33,7 +28,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('browser-sync', function () {
-    return browserSync.init({
+    browserSync.init({
         server: {
             baseDir: "./"
         }
@@ -44,6 +39,7 @@ gulp.task('reload', function (done) {
     browserSync.reload();
     done();
 });
+
 gulp.task('watch', function () {
     gulp.watch("js/*.js", gulp.series('scripts', 'reload'));
     gulp.watch("./stylesheets/*.scss", gulp.series('sass', 'reload'));
@@ -52,10 +48,5 @@ gulp.task('watch', function () {
 
 
 
-gulp.task('default', gulp.parallel('browser-sync', 'watch', 'scripts', 'sass'));
-
-
-
-
-
+gulp.task('default', gulp.parallel('browser-sync', 'watch', 'sass', 'scripts'));
 

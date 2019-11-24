@@ -4,7 +4,7 @@
         "no-alert": 1,
         "camelcase": 1,
         "curly": 1,
-        "equeq": 1,
+        "eqeqeq": 1,
         "no-console": 1,
         "guard-for-in": 1,
         "no-empty": 1,

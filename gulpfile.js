@@ -21,7 +21,7 @@ gulp.task('scripts', function () {
     return gulp.src('./js/*.js')
         .pipe(eslint())
         .pipe(eslint.format())
-        .pipe(eslint.failAfterError())
+        // .pipe(eslint.failAfterError())
         .pipe(terser())
         .pipe(rename({ extname: '.min.js' }))
         .pipe(gulp.dest('./build/js'))
@@ -41,7 +41,7 @@ gulp.task('reload', function (done) {
 });
 
 gulp.task('watch', function () {
-    gulp.watch("js/*.js", gulp.series('scripts', 'reload'));
+    gulp.watch("./js/*.js", gulp.series('scripts', 'reload'));
     gulp.watch("./stylesheets/*.scss", gulp.series('sass', 'reload'));
     gulp.watch("index.html", gulp.series('reload'));
 });

@@ -18,7 +18,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('scripts', function () {
-    return gulp.src('./js/*.js')
+    return gulp.src('./src/*.js')
         .pipe(eslint())
         .pipe(eslint.format())
         // .pipe(eslint.failAfterError())
@@ -41,7 +41,7 @@ gulp.task('reload', function (done) {
 });
 
 gulp.task('watch', function () {
-    gulp.watch("./js/*.js", gulp.series('scripts', 'reload'));
+    gulp.watch("./src/*.js", gulp.series('scripts', 'reload'));
     gulp.watch("./stylesheets/*.scss", gulp.series('sass', 'reload'));
     gulp.watch("index.html", gulp.series('reload'));
 });

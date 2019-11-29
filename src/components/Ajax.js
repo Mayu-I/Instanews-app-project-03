@@ -4,13 +4,10 @@ export default class Ajax {
         $.ajax({
             type: 'GET',
             url: 'https://api.nytimes.com/svc/topstories/v2/science.json?api-key=91MnfWevTdr6zkWbGOsM5wjGin9Hej9K',
-            dataType: 'JSON',
-            success: function (data) {
-                console.log(data)
-            },
-            // error: function (err) {
-            //     console.log("It's error")
-            // }
-        });
+        })
+            .then(
+                data => console.log(data),
+                error => alert('Failed to load')
+            )
     });
 }

@@ -23,6 +23,12 @@ $pc: 980px;
   }
 }
 
+@mixin pcandtb{
+  @media (min-width: $tb) {
+    @content;
+  }
+}
+
   @mixin push-auto {
     margin: { 
         left: auto;

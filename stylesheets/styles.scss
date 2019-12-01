@@ -1,6 +1,6 @@
 @import "partials/mixins";
 @import "partials/variables";
-
+@import "partials/fonts";
 
 html{
     font-size: 62.5%;
@@ -35,7 +35,6 @@ select {
   select::-ms-expand {
     display: block!important;
 }
-
 
 .header{
   display: -webkit-box;
@@ -81,6 +80,7 @@ select {
         }
         &Desc{
             font-size: 2.2rem;
+            font-weight: 300;
         }
         &Wrapper{
             width: 120px;
@@ -116,48 +116,24 @@ select {
           -webkit-box-align: end;
               -ms-flex-align: end;
                   align-items: flex-end;
-          &:nth-child(1){
-            background-image: url('../../images/n01.jpg');
-          }
-          &:nth-child(2){
-            background-image: url('../../images/n02.jpg');
-          }
-          &:nth-child(3){
-            background-image: url('../../images/n03.jpg');
-          }
-          &:nth-child(4){
-            background-image: url('../../images/n04.jpg');
-          }
-          &:nth-child(5){
-            background-image: url('../../images/n01.jpg');
-          }
-          &:nth-child(6){
-            background-image: url('../../images/n02.jpg');
-          }
-          &:nth-child(7){
-            background-image: url('../../images/n03.jpg');
-          }
-          &:nth-child(8){
-            background-image: url('../../images/n04.jpg');
-          }
-          &:nth-child(9){
-            background-image: url('../../images/n01.jpg');
-          }
-          &:nth-child(10){
-            background-image: url('../../images/n02.jpg');
-          }
-          &:nth-child(11){
-            background-image: url('../../images/n03.jpg');
-          }
-          &:nth-child(12){
-            background-image: url('../../images/n04.jpg');
-          }
+                  transition-duration: 0.5s;
       }
       &__desc{
           line-height: 2;
           padding: 8px;
           background-color: rgba(0, 0, 0, 0.5);
       }
+      &__empty{
+          text-align: center;
+          font-size: 2.4rem;
+          margin-top: 40px;
+          margin-bottom: 60px;
+      }
+    //   &__content{
+    //     &:hover{
+            
+    //       }
+    //   }
 }
 
 .footer{

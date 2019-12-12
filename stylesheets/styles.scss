@@ -1,6 +1,8 @@
 @import "partials/mixins";
 @import "partials/variables";
 @import "partials/fonts";
+@import "ress";
+@import "chosen";
 
 html{
     font-size: 62.5%;
@@ -34,6 +36,27 @@ select {
 
   select::-ms-expand {
     display: block!important;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    animation-name: fadein;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes fadein {
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .header{
@@ -89,18 +112,22 @@ select {
             background-color: #fff;
         }
     }
+    &.clicked{
+    transition: all 0.5s ease;
+    height: 100px;
+    }
 }
 
 .articles{
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns:auto;
-    grid-template-columns:auto;
+    -ms-grid-columns:1fr;
+    grid-template-columns:1fr;
     @include pc{
-      grid-template-columns:auto auto auto auto;  
+      grid-template-columns:1fr 1fr 1fr 1fr;  
     }
     @include tb{
-      grid-template-columns:auto auto auto;  
+      grid-template-columns:1fr 1fr 1fr;  
     }
     & a{
         max-height: 100%;

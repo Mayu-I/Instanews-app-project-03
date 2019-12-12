@@ -1,4 +1,3 @@
-
 $(function () {
     const getArticles = () => {
         const category = $('.header__sectionWrapper').val();
@@ -18,7 +17,7 @@ $(function () {
                         const desc = data.results[i].abstract;
                         $(`<a href="${link}" class="articles__item" style="background-image:url('${img}');" target="_blank">
                 <article>
-                    <p class="articles__desc">${desc}</p>
+                    <p class="articles__desc hide">${desc}</p>
                 </article>
             </a>`)
                             .appendTo(".articles");
@@ -36,4 +35,9 @@ $(function () {
         getArticles();
 
     });
+
+    $()
 });
+
+
+

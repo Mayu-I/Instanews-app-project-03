@@ -48,7 +48,6 @@ select {
     animation-iteration-count: infinite;
 }
 
-
 @keyframes fadein {
     from{
         opacity: 0;
@@ -57,6 +56,20 @@ select {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.loader {
+    background: #000;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    z-index: 999;
+    text-align: center;
+}
+
+.loader > img {
+    padding: 20px 0;
+    width: 150px;
 }
 
 .header{
@@ -71,14 +84,16 @@ select {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 30px;
+  transition: all 1s ease;
+  margin: 40px 0 20px 30px;
     @include pc{
       text-align: left;
       -webkit-box-pack: start;
           -ms-flex-pack: start;
               justify-content: flex-start;
-    }
-    @include pcandtb{
+            }
+            @include pcandtb{
+                height: 110px;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
             -ms-flex-direction: row;
@@ -86,6 +101,7 @@ select {
     }
     &__logo{
       width: 150px;
+      transition: all 1s ease;
         @include pcandtb{
           width: 90px;
         }
@@ -104,6 +120,7 @@ select {
         &Desc{
             font-size: 2.2rem;
             font-weight: 300;
+            vertical-align: middle;
         }
         &Wrapper{
             width: 120px;
@@ -113,8 +130,41 @@ select {
         }
     }
     &.clicked{
-    transition: all 0.5s ease;
-    height: 100px;
+        @include pcandtb{
+            height: 60px;
+            margin: 15px 0 5px 30px;
+
+        }
+        .header__section{
+            margin-left: 80px;
+            display: flex;
+            align-items: center;
+            @include sp{
+              @include push-auto ;
+              margin-top: 10px;
+              display: inline-block;
+            }
+            &Desc{
+                font-size: 2.2rem;
+                font-weight: 300;
+            }
+            &Wrapper{
+                margin-top: 0;
+                margin-left: 20px;
+            }
+        }
+        .header__logo{
+            width: 120px;
+            @include pcandtb{
+              width: 50px;
+            }
+        }
+        .chosen-wrapper{
+            margin-bottom: 0;
+        }
+        .chosen-single{
+            height: 35px;
+        }
     }
 }
 
@@ -144,6 +194,9 @@ select {
               -ms-flex-align: end;
                   align-items: flex-end;
                   transition-duration: 0.5s;
+                  &:hover{
+                      opacity: 0.7;
+                  }
       }
       &__desc{
           line-height: 2;
@@ -156,11 +209,6 @@ select {
           margin-top: 40px;
           margin-bottom: 60px;
       }
-    //   &__content{
-    //     &:hover{
-            
-    //       }
-    //   }
 }
 
 .footer{

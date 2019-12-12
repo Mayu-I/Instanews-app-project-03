@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>InstaNews</title>
+    <meta name="description" content="Insta News">
+    <meta name="keywords" content="NewYork Times,story,News,JavaScript">
+    <meta name="author" content="Mayu Imanaka">
+    <title>InstaNews App</title>
     <link rel="stylesheet" href="build/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.2/chosen.min.css">
     <link rel="stylesheet"
@@ -14,7 +17,7 @@
 </head>
 
 <body>
-    <header class="header clicked">
+    <header class="header">
         <div class="header__logo"><img src="assets/images/nyt-logo.svg" alt="newyork-times-logo"></div>
         <div class="header__section">
             <h4 class="header__sectionDesc">Choose a section:</h4>
@@ -53,6 +56,7 @@
         </div>
     </header>
     <content>
+        <div class="loader hide"><img src="assets/images/ajax-loader.gif" alt="loader"></div>
         <section class="articles">
         </section>
     </content>

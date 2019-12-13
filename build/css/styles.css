@@ -450,8 +450,9 @@ select::-ms-expand {
 .hide {
   display: none; }
 
-.hideDesc {
-  display: none; }
+@media (min-width: 980px) {
+  .hideDesc {
+    display: none; } }
 
 .show {
   -webkit-animation-name: fadein;
@@ -606,7 +607,7 @@ select::-ms-expand {
   .articles a {
     max-height: 100%; }
   .articles__item {
-    height: 600px;
+    height: 510px;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;

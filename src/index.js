@@ -13,37 +13,60 @@ $(function () {
         })
             .then(
                 data => {
-                    for (let i = 0; i < 12; i++) {
-                        const link = data.results[i].url;
-                        const img = data.results[i].multimedia[4].url;
-                        const desc = data.results[i].abstract;
-                        $(`<a href="${link}" class="articles__item" style="background-image:url('${img}');" target="_blank">
-                <article>
-                    <p class="articles__desc hide">${desc}</p>
-                </article>
-            </a>`)
-                            .appendTo(".articles");
+                    if (data.results.length >= 12) {
+                        for (let i = 0; i < 12; i++) {
+                            if (data.results[i].multimedia.length >= 5) {
+                                const link = data.results[i].url;
+                                const img = data.results[i].multimedia[4].url;
+                                const desc = data.results[i].abstract;
+                                $(`<a href='${link}' class='articles__item' style='background-image:url(${img});' target='_blank'>
+                            <article>
+                            <p class='articles__desc hideDesc'>${desc}</p>
+                            </article>
+                            </a>`).appendTo('.articles');
+                            }
+                        }
+                    } else {
+                        for (let i = 0; i < data.results.length; i++) {
+                            if (data.results[i].multimedia.length >= 5) {
+                                const link = data.results[i].url;
+                                const img = data.results[i].multimedia[4].url;
+                                const desc = data.results[i].abstract;
+                                $(`<a href='${link}' class='articles__item' style='background-image:url(${img});' target='_blank'>
+                            <article>
+                            <p class='articles__desc hideDesc'>${desc}</p>
+                            </article>
+                            </a>`).appendTo('.articles');
+                            }
+                        }
                     }
                 },
-                error => alert('Failed to load')
+                error => console.log('Failed to load')
             )
     }
 
     getArticles();
 
     $('.header__sectionWrapper').change(function () {
-        $(".articles").empty();
+        $('.articles').empty();
         getArticles();
     });
 
     //abstract
-    $('.articles__item').hover(
-        function () {
-            $('.articles__desc')
-                .toggleClass('hide')
-                .toggleClass('show')
+    $('.articles').mouseover(
+        function (event) {
+            $($(event.target).find('.articles__desc')[0])
+                .removeClass('hideDesc')
+                .addClass('show')
+        })
+
+    $('.articles').mouseout(
+        function (event) {
+            $($(event.target).find('.articles__desc')[0])
+                .addClass('hideDesc')
+                .removeClass('show')
         }
-    );
+    )
 
     //header
     window.onscroll = function () { scrollFunction() };

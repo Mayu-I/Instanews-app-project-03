@@ -450,13 +450,16 @@ select::-ms-expand {
 .hide {
   display: none; }
 
+.hideDesc {
+  display: none; }
+
 .show {
   -webkit-animation-name: fadein;
           animation-name: fadein;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite; }
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1; }
 
 @-webkit-keyframes fadein {
   from {

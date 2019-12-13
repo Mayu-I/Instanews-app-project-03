@@ -84,8 +84,11 @@ select {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  transition: all 1s ease;
+  transition: height 0.5s ease;
   margin: 40px 0 20px 30px;
+  @include sp{
+      margin-left: 0;
+  }
     @include pc{
       text-align: left;
       -webkit-box-pack: start;
@@ -101,7 +104,7 @@ select {
     }
     &__logo{
       width: 150px;
-      transition: all 1s ease;
+      transition: all 0.5s ease;
         @include pcandtb{
           width: 90px;
         }
@@ -130,10 +133,19 @@ select {
         }
     }
     &.clicked{
+        position: fixed;
+        z-index: 999;
+        background: #000000;
+        width: 100%;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 20px 0 15px 30px;
         @include pcandtb{
-            height: 60px;
-            margin: 15px 0 5px 30px;
-
+            height: 75px;
+        }
+        @include sp{
+            padding-right: 30px;
         }
         .header__section{
             margin-left: 80px;
@@ -142,7 +154,6 @@ select {
             @include sp{
               @include push-auto ;
               margin-top: 10px;
-              display: inline-block;
             }
             &Desc{
                 font-size: 2.2rem;
@@ -154,13 +165,17 @@ select {
             }
         }
         .header__logo{
-            width: 120px;
+            width: 80px;
             @include pcandtb{
-              width: 50px;
+              width: 40px;
             }
         }
         .chosen-wrapper{
             margin-bottom: 0;
+            &::after{
+                top:17px;
+                right: 0;
+            }
         }
         .chosen-single{
             height: 35px;
@@ -213,12 +228,13 @@ select {
 
 .footer{
     color: $footer-color;
-    padding: 30px 30px 60px;
+    padding: 100px 30px 60px;
     text-align: center;
     @include pc{
     text-align: left;
+    padding-top: 150px;
     }
     @include tb{
-        padding-bottom: 40px;
+        padding-bottom: 20px;
     }
 }

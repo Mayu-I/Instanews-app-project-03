@@ -9,7 +9,6 @@ $(function () {
             },
             success: function () {
                 $('.loader').addClass('hide');
-                $('.header').addClass('clicked');
             }
         })
             .then(
@@ -38,16 +37,24 @@ $(function () {
     });
 
     //abstract
-    $("a").hover(
+    $('.articles__item').hover(
         function () {
-            console.log('hover!')
             $('.articles__desc')
                 .toggleClass('hide')
                 .toggleClass('show')
         }
     );
 
+    //header
+    window.onscroll = function () { scrollFunction() };
 
+    function scrollFunction() {
+        if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
+            $('.header').addClass('clicked');
+        } else {
+            $('.header').removeClass('clicked');
+        }
+    }
 });
 
 

@@ -1,14 +1,14 @@
 /*Chosen style*/
 .chosen-wrapper{
     margin:0 auto 25px;
-    max-width:180px;
+    width:150px;
     position:relative;
     &:after{
       pointer-events: none;
       content: "";
       position: absolute;
-      top: 17px;
-      right: 0;
+      top: 32px;
+      right: 20px;
       width: 0;
       height: 0;
       border-left: 6px solid transparent;

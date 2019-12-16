@@ -41,7 +41,7 @@ $(function () {
                         }
                     }
                 },
-                error => console.log('Failed to load')
+                error => (console.log('Failed to load'))
             )
     }
 

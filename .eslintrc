@@ -14,5 +14,14 @@
             1,
             "single"
         ]
+    },
+    "globals": {
+        "jQuery": false,
+        "$": false
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
     }
 }

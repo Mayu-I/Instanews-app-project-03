@@ -3,7 +3,7 @@ $(function () {
         const category = $('.header__sectionWrapper').val();
         $.ajax ({
             type: 'GET',
-            url: `https://api.nytimes.com/svc/topstories/v2/${category}.json?api-key=91MnfWevTdr6zkWbGOsM5wjGin9Hej9Kpoop`,
+            url: `https://api.nytimes.com/svc/topstories/v2/${category}.json?api-key=91MnfWevTdr6zkWbGOsM5wjGin9Hej9K`,
             beforeSend: function () {
                 $('.loader').removeClass('hide');
             },

@@ -5,7 +5,7 @@
 * [Technology](#technology)
 
 ## General info
-This propject is a one-page, responsive website that allows a user to filter top news story categories via the New York Times API
+This is a one-page, responsive website that allows a user to filter top news story categories via the New York Times API
 
 ![InstaNews App](https://user-images.githubusercontent.com/42310122/70943200-28397180-2005-11ea-8e9f-84531bfe30a6.png)
 

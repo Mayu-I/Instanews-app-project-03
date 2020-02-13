@@ -14,3 +14,7 @@ This is a one-page, responsive website that allows a user to filter top news sto
 - html
 - jquery
 - scss
+
+### Visit the site↓
+
+[https://mayu-i.github.io/Instanews-app-project-03/](https://mayu-i.github.io/Instanews-app-project-03/)

@@ -17,7 +17,7 @@ $(function () {
                         for (let i = 0; i < 12; i++) {
                             if (data.results[i].multimedia.length >= 5) {
                                 const link = data.results[i].url;
-                                const img = data.results[i].multimedia[4].url;
+                                const img = data.results[i].multimedia[0].url;
                                 const desc = data.results[i].abstract;
                                 $(`<a href='${link}' class='articles__item' style='background-image:url(${img});' target='_blank'>
                             <article>

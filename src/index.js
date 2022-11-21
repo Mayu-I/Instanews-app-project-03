@@ -1,7 +1,7 @@
 $(function () {
     const getArticles = () => {
         const category = $('.header__sectionWrapper').val();
-        $.ajax({
+        $.ajax ({
             type: 'GET',
             url: `https://api.nytimes.com/svc/topstories/v2/${category}.json?api-key=91MnfWevTdr6zkWbGOsM5wjGin9Hej9K`,
             beforeSend: function () {
@@ -26,7 +26,8 @@ $(function () {
                             </a>`).appendTo('.articles');
                             }
                         }
-                    } else {
+                    } 
+                    else {
                         for (let i = 0; i < data.results.length; i++) {
                             if (data.results[i].multimedia.length >= 5) {
                                 const link = data.results[i].url;
@@ -40,9 +41,12 @@ $(function () {
                             }
                         }
                     }
-                },
-                error => (console.log('Failed to load'))
+                }
             )
+            .fail(function() {
+                $('.articles').append('<p class="failed">Could not generate content. Please try again later. If the issue persists, contact the website administrator.</p>')
+                $('.loader').hide()
+            })
     }
 
     getArticles();
